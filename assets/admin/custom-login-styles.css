@@ -1,0 +1,29 @@
+body.login {background-color: #fff;}
+
+.login h1 a {
+	background-image: url('logo.png');
+	width: 302px;
+	height: 126px;
+	background-size: auto;
+	margin: 0 auto;
+}
+
+.login form {
+	box-shadow: none;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+	background-color: #ffffff;
+}
+
+.login .button-primary,
+.login .button-primary:hover {
+	background-color: #69bd45;
+	color: #fff;
+	border: none;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+.login #backtoblog, .login #nav {display: none;}

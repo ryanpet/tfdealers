@@ -1,0 +1,247 @@
+/****************************************************************
+	dependencies
+****************************************************************/
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bower_components/font-awesome/scss/font-awesome";
+/****************************************************************
+	section styles
+****************************************************************/
+@import "section-styles/gravity-forms-bootstrap"; /* gravity form wordpress plugin */
+@import "section-styles/fonts"; /* fonts */
+@import "section-styles/wp-generated-css"; /* wordpress generated css */
+
+/****************************************************************
+	variables
+****************************************************************/
+$color-brown: #4e3b33;
+$color-red: #ed2024;
+
+$font-open-sans: 'open_sansregular';
+$font-open-sans-light: 'open_sanslight';
+$font-open-sans-bold: 'open_sansbold';
+$font-brandon-printedone: 'brandon_printedone';
+$font-museo-slab500: 'museo_slab500';
+$font-museo-slab100: 'museo_slab100';
+
+
+/* just for reference
+h1,.h1{font-size:36px}
+h2,.h2{font-size:30px}
+h3,.h3{font-size:24px}
+h4,.h4{font-size:18px}
+h5,.h5{font-size:14px}
+h6,.h6{font-size:12px}
+*/
+
+/****************************************************************
+	custom style
+****************************************************************/
+body {
+	font-family: $font-open-sans;
+	font-size: 15px;
+	color: $color-brown;
+	background: #fff;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {max-width: 100%;height: auto;}
+
+a,
+a:hover,
+a:focus,
+a:visited {
+	color: $color-red;
+	text-decoration: none;
+	outline: none;
+}
+
+p,
+ul,
+ol {margin-bottom: 20px;}
+
+.strong {font-family: $font-open-sans-bold;}
+
+.embed-responsive {
+	position:relative;
+	display:block;
+	height:0;
+	padding:0;
+	overflow:hidden;
+	margin-bottom: 10px;
+}
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	height:100%;
+	width:100%;
+	border:0;
+}
+.embed-responsive.embed-responsive-16by9 {padding-bottom:56.25%;}
+.embed-responsive.embed-responsive-4by3{padding-bottom:75%}
+
+
+.wp-caption {border: none;}
+.wp-caption p.wp-caption-text {font-size: 15px;margin-top: 10px;}
+
+.list-arrow {
+	list-style: none;
+	padding-left: 0;
+}
+.list-arrow li {padding-left: 26px;}
+.list-arrow li:before {
+	font-family: 'FontAwesome';
+	content: '\f061';
+	display: block;
+	float: left;
+	margin-left: -26px;
+	color: $color-red;
+}
+
+.text-red {color: $color-red;}
+.text-brown {color: $color-brown;}
+
+
+/* sidebar */
+#logo-brand {
+	text-align: center;
+	margin: 20px 0;
+}
+#logo-brand a {display: block;}
+
+#primary-menu {
+	font-family: $font-museo-slab500;
+	font-size: 16px;
+}
+#primary-menu ul {
+	@extend .list-unstyled;
+}
+#primary-menu ul li {line-height: 1.9;}
+#primary-menu ul li a {color: $color-brown;}
+#primary-menu ul li.current_page_item > a,
+#primary-menu ul li.current_page_parent > a {color: $color-red;}
+
+#primary-menu ul .sub-menu {
+	padding-left: 10px;
+}
+#primary-menu ul .sub-menu > li {
+	position: relative;
+}
+#primary-menu ul .sub-menu > li:before {
+	@extend .fa;
+	@extend .fa-caret-right;
+	margin-right: 10px;
+}
+
+#widget-sidebar {
+	font-size: 12px;
+	@extend .list-unstyled;
+}
+#widget-sidebar > li {margin: 50px 0 0 0;}
+#widget-sidebar > li:first-child {margin-top: 0;}
+
+#widget-sidebar .widget-title {
+	font-family: $font-open-sans-bold;
+}
+
+
+
+/* article */
+.article-post {margin-bottom: 50px;}
+.article-header {margin-bottom: 20px;}
+.article-title {
+	font-size: 30px;
+	font-family: $font-brandon-printedone;
+}
+.article-title a {color: $color-brown;}
+.article-meta {
+	font-size: 12px;
+	color: #5f5049;
+}
+
+/* gravity forms */
+.ginput_quantity {display: inline-block!important;}
+
+.gf_product{
+	border-bottom: #ccc solid 1px!important;
+	padding: 8px 0!important;
+	margin: 0!important;
+}
+
+/*
+.gf_product label,
+.gf_product .gfield_description {
+	display: inline-block;
+	width: 50%;
+}
+.gf_product .gfield_description {
+	padding-left: 10px;
+}
+*/
+
+
+
+/* extra small screen only */
+@media (max-width: $screen-xs-max) {
+	.gf_product.gf_left_half,
+	.gf_product.gf_right_half {width: 100%!important;}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+	#logo-brand {text-align: left;}
+
+	.gf_product_fields .gform_fields {
+		display: table!important;
+		width: 100%;
+	}
+	.gf_product_fields .gform_fields li {
+		display: table-row!important;
+		width: inherit!important;
+	}
+
+	.gf_product_section_title h2.gsection_title,
+	.gf_product .gfield_label,
+	.gf_product .gfield_description,
+	.gf_product .ginput_container_singleproduct {
+		display: table-cell!important;
+		width: auto!important;
+		vertical-align: top;
+	}
+
+	.gf_product_section_title h2.gsection_title {
+		padding: 1.8em 0!important;
+	}
+
+	.gf_product .gfield_label,
+	.gf_product .gfield_description,
+	.gf_product .ginput_container_singleproduct {
+		padding: 8px 0!important;
+		border-bottom: #ccc solid 1px;
+	}
+
+	.gf_product .gfield_label {
+		margin: 0!important;
+	}
+	.gf_product .gfield_label,
+	.gf_product .gfield_description {padding-right: 15px!important;}
+	.gf_product .gfield_description {min-width: 70px;}
+}
+
+/* small devices only */
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {}
+
+/* medium devices only */
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {}
